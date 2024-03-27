@@ -1,5 +1,6 @@
 --Olist store data set
---
+--Cleaning and visualizing data based on the Brazilian e-commerce public dataset of orders made at the Olist Store.
+--The dataset has information on 100k orders from 2016 to 2018 made at multiple marketplaces in Brazil.
 
 --Sales are being tagged once the payment has been made and recorded.
 SELECT
