@@ -67,7 +67,6 @@ ORDER BY sales.customer_id ASC;
 
 
 --2. How many days has each customer visited the restaurant?
-
 SELECT
 	customer_id,
 	COUNT(DISTINCT order_date)
@@ -78,7 +77,6 @@ ORDER BY customer_id;
 
 
 --3. What was the first item from the menu purchased by each customer?
-
 WITH cte_rank AS (
 	SELECT
 		customer_id,
@@ -103,7 +101,6 @@ ORDER BY customer_id;
 
 
 --4. What is the most purchased item on the menu and how many times was it purchased by all customers?
-
 SELECT
 	mu.product_name,
 	COUNT(s.product_id) AS purchase_count
@@ -116,7 +113,6 @@ ORDER BY purchase_count DESC;
 
 
 --5. Which item was the most popular for each customer?
-
 WITH cte AS (
 	SELECT
 		s.customer_id,
@@ -161,7 +157,6 @@ WHERE
 	r_date = 1;
 
 --7. Which item was purchased just before the customer becamse a member?
-
 WITH cte AS (
 	SELECT
 		mm.customer_id,
@@ -184,7 +179,6 @@ WHERE
 	r_date = 1;
 
 --8. What is the total items and amount spent for each member before they became a member?
-
 SELECT
 	s.customer_id,
 	SUM(mu.price)
@@ -199,7 +193,6 @@ WHERE
 GROUP BY s.customer_id;
 
 --9. If each $1 spent equates to 10 points and sushi has a 2x points multiplier. How many points would each customer have?
-
 WITH cte_points AS (
 	SELECT
 		*,
