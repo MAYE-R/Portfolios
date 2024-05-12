@@ -181,6 +181,7 @@ WHERE
 --8. What is the total items and amount spent for each member before they became a member?
 SELECT
 	s.customer_id,
+	COUNT(s.product_id),
 	SUM(mu.price)
 FROM
 	members AS mm
